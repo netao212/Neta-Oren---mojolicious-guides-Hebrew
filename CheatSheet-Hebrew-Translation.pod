@@ -1,33 +1,33 @@
 =head1 NAME
-=head1 ων
+=head1 Χ©Χ
 
 Mojolicious::Guides::Cheatsheet - Reference
 
-=head1 ρχιψδ
+=head1 Χ΅Χ§Χ™Χ¨Χ”
 
-ξρξκ ζδ ξλιμ δϊιηρεϊ ϊξφιϊι μλμ ξθψδ.
+ΧΧ΅ΧΧ Χ–Χ” ΧΧ›Χ™Χ Χ”ΧªΧ™Χ—Χ΅Χ•Χª ΧªΧΧ¦Χ™ΧªΧ™ ΧΧ›Χ ΧΧΧ¨Χ”.
 
-=head1 ςψλι ρθΰω ωξεψιν
+=head1 ΧΆΧ¨Χ›Χ™ Χ΅ΧΧΧ© Χ©ΧΧ•Χ¨Χ™Χ
 
-ηευ ξλμ ξδ ωξϊηιμ ςν C<mojo.> ιω ξρτψ ςψλι ρθΰω ωωξεψιν ςαεψ λμ δξρμεμιν εδξτιχ.
+Χ—Χ•Χ¥ ΧΧ›Χ ΧΧ” Χ©ΧΧªΧ—Χ™Χ ΧΆΧ C<mojo.> Χ™Χ© ΧΧ΅Χ¤Χ¨ ΧΆΧ¨Χ›Χ™ Χ΅ΧΧΧ© Χ©Χ©ΧΧ•Χ¨Χ™Χ ΧΆΧ‘Χ•Χ¨ Χ›Χ Χ”ΧΧ΅ΧΧ•ΧΧ™Χ Χ•Χ”ΧΧ¤Χ™Χ§.
 
 =head2 C<action>
 
   $r->route('/welcome')->to(action => 'hello');
 
-τςεμδ μωμεη ΰμ.
+Χ¤ΧΆΧ•ΧΧ” ΧΧ©ΧΧ•Χ— ΧΧ.
 
 =head2 C<app>
 
   $r->route('/welcome')->to(app => MyApp->new);
 
-ιιωεν ωξεψ μωμεη ΰμιε.
+Χ™Χ™Χ©Χ•Χ Χ©ΧΧ•Χ¨ ΧΧ©ΧΧ•Χ— ΧΧΧ™Χ•.
 
 =head2 C<cb>
 
   $r->route('/welcome')->to(cb => sub {...});
 
-ηιεβ ηεζψ μωμεη ΰμιε.
+Χ—Χ™Χ•Χ’ Χ—Χ•Χ–Χ¨ ΧΧ©ΧΧ•Χ— ΧΧΧ™Χ•.
 
 =head2 C<class>
 
@@ -39,154 +39,154 @@ Camelized alternative to C<controller>.    *********
 
   $r->route('/welcome')->to(controller => 'greetings');
 
-αχψ μωμεη ΰμιε.
+Χ‘Χ§Χ¨ ΧΧ©ΧΧ•Χ— ΧΧΧ™Χ•.
 
 =head2 C<data>
 
   $self->render(data => 'raw bytes');
 
-δτεκ αιιθιν μϊβεαδ
+Χ”Χ¤Χ•Χ Χ‘Χ™Χ™ΧΧ™Χ ΧΧªΧ’Χ•Χ‘Χ”
 
 =head2 C<extends>
 
   $self->render(extends => 'template');
 
-ϊαπιϊ μδψηια.
+ΧªΧ‘Χ Χ™Χª ΧΧ”Χ¨Χ—Χ™Χ‘.
 
 =head2 C<format>
 
   $self->render(format => 'rss');
 
-τεψξθ μωιπει.
+Χ¤Χ•Χ¨ΧΧ ΧΧ©Χ™Χ Χ•Χ™.
 
 =head2 C<handler>
 
   $self->render(handler => 'ep');
 
-ξωπδ ςαεψ ϊδμικ δωιπει.
+ΧΧ©Χ Χ” ΧΆΧ‘Χ•Χ¨ ΧªΧ”ΧΧ™Χ Χ”Χ©Χ™Χ Χ•Χ™.
 
 =head2 C<inline>
 
   $self->render(inline => '<%= 1 + 1%>');
 
-ϊαπιϊ ξρεγψϊ μωπεϊ.
+ΧªΧ‘Χ Χ™Χª ΧΧ΅Χ•Χ“Χ¨Χª ΧΧ©Χ Χ•Χª.
 
 =head2 C<json>
 
   $self->render(json => {foo => 23});
 
-δτεκ ξαπδ τψμ μϊβεαϊ JSON.
+Χ”Χ¤Χ•Χ ΧΧ‘Χ Χ” Χ¤Χ¨Χ ΧΧªΧ’Χ•Χ‘Χª JSON.
 
 =head2 C<layout>
 
   $self->render(layout => 'green');
 
-ξςψκ μωιπει.
+ΧΧΆΧ¨Χ ΧΧ©Χ™Χ Χ•Χ™.
 
 =head2 C<method>
 
   $r->route('/welcome')->to(method => 'hello');
 
-ημετδ ΰμ C<action>.
+Χ—ΧΧ•Χ¤Χ” ΧΧ C<action>.
 
 =head2 C<namespace>
 
   $r->route('/welcome')->to(namespace => 'TestApp', method => 'lulz');
 
-ξψηα μωμεη ΰμιε.
+ΧΧ¨Χ—Χ‘ ΧΧ©ΧΧ•Χ— ΧΧΧ™Χ•.
 
 =head2 C<partial>
 
   my $result = $self->render(partial => 1);
 
-δηζψ ϊεφΰδ ξρεγψϊ αξχεν μδτεκ ΰϊ ζδ μϊβεαδ.
+Χ”Χ—Χ–Χ¨ ΧªΧ•Χ¦ΧΧ” ΧΧ΅Χ•Χ“Χ¨Χª Χ‘ΧΧ§Χ•Χ ΧΧ”Χ¤Χ•Χ ΧΧª Χ–Χ” ΧΧªΧ’Χ•Χ‘Χ”.
 
 =head2 C<path>
 
   $r->route('/welcome')->to(path => '/test', app => MyApp->new);
 
-πϊια αριρ ςαεψ δςαψδ μιιωεξιν ξωεαφιν.
+Χ ΧªΧ™Χ‘ Χ‘Χ΅Χ™Χ΅ ΧΆΧ‘Χ•Χ¨ Χ”ΧΆΧ‘Χ¨Χ” ΧΧ™Χ™Χ©Χ•ΧΧ™Χ ΧΧ©Χ•Χ‘Χ¦Χ™Χ.
 
 =head2 C<status>
 
   $self->render(status => 404);
 
 Status code to use for rendered response.
-χεγ ρθΰθερ μωιξεω ςαεψ ϊβεαδ ξεϊΰξϊ.
+Χ§Χ•Χ“ Χ΅ΧΧΧΧ•Χ΅ ΧΧ©Χ™ΧΧ•Χ© ΧΆΧ‘Χ•Χ¨ ΧªΧ’Χ•Χ‘Χ” ΧΧ•ΧªΧΧΧª.
 
 =head2 C<template>
 
   $self->render(template => 'bye');
 
-ϊαπιϊ μδϊΰιν.
+ΧªΧ‘Χ Χ™Χª ΧΧ”ΧªΧΧ™Χ.
 
 =head2 C<text>
 
   $self->render(text => 'Hello World!');
 
-δτεκ ϊλεπεϊ ΰμ ϊβεαδ.
+Χ”Χ¤Χ•Χ ΧªΧ›Χ•Χ Χ•Χª ΧΧ ΧªΧ’Χ•Χ‘Χ”.
 
 =head1 ENVIRONMENT VARIABLES
 
-ημχιν ψαιν ωμ L<Mojolicious> ιλεμιν μδϊλεεο ςν ξωϊπι ραιαδ. ξωϊπι ϊχεο δραιαδ μΰ λμεμιν ξΰηψ εδν μωιξεω δξτϊη αμαγ.
+Χ—ΧΧ§Χ™Χ Χ¨Χ‘Χ™Χ Χ©Χ L<Mojolicious> Χ™Χ›Χ•ΧΧ™Χ ΧΧ”ΧªΧ›Χ•Χ•Χ ΧΆΧ ΧΧ©ΧªΧ Χ™ Χ΅Χ‘Χ™Χ‘Χ”. ΧΧ©ΧªΧ Χ™ ΧªΧ§Χ•Χ Χ”Χ΅Χ‘Χ™Χ‘Χ” ΧΧ Χ›ΧΧ•ΧΧ™Χ ΧΧΧ—Χ¨ Χ•Χ”Χ ΧΧ©Χ™ΧΧ•Χ© Χ”ΧΧ¤ΧªΧ— Χ‘ΧΧ‘Χ“.
 
 =head2 C<MOJO_APP>
 
-ξημιθιν αΰιζδ ιιωεν L<Mojolicious> ΰε ιιωεν L<Mojo> πωϊξω, ϊξιγ φψικ μδλιμ ων χμΰρ λξε C<MyApp>, αγψκ λμμ ςψκ αψιψϊ ξηγμ ΰμ
+ΧΧ—ΧΧ™ΧΧ™Χ Χ‘ΧΧ™Χ–Χ” Χ™Χ™Χ©Χ•Χ L<Mojolicious> ΧΧ• Χ™Χ™Χ©Χ•Χ L<Mojo> Χ Χ©ΧªΧΧ©, ΧªΧΧ™Χ“ Χ¦Χ¨Χ™Χ ΧΧ”Χ›Χ™Χ Χ©Χ Χ§ΧΧΧ΅ Χ›ΧΧ• C<MyApp>, Χ‘Χ“Χ¨Χ Χ›ΧΧ ΧΆΧ¨Χ Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ ΧΧ
 L<Mojo::HelloWorld>.
 
   MOJO_APP=MyApp
 
 =head2 C<MOJO_CERT_FILE>
 
-δπϊια μϊςεγϊ TLS φψικ μδλιμ ϊξιγ πϊια λξε C</etc/tls/client.crt>. ωιν μα L<IO::Socket::SSL> ηιια μδιεϊ ξεϊχο ςαεψ ϊξιλϊ TLL.
+Χ”Χ ΧªΧ™Χ‘ ΧΧªΧΆΧ•Χ“Χª TLS Χ¦Χ¨Χ™Χ ΧΧ”Χ›Χ™Χ ΧªΧΧ™Χ“ Χ ΧªΧ™Χ‘ Χ›ΧΧ• C</etc/tls/client.crt>. Χ©Χ™Χ ΧΧ‘ L<IO::Socket::SSL> Χ—Χ™Χ™Χ‘ ΧΧ”Χ™Χ•Χª ΧΧ•ΧªΧ§Χ ΧΆΧ‘Χ•Χ¨ ΧªΧΧ™Χ›Χª TLL.
 
   MOJO_CERT_FILE=/etc/tls/client.crt
 
 =head2 C<MOJO_CHUNK_SIZE>
 
-βεγμ πϊη ωπςωδ αε ωιξεω ςαεψ αιφεςι I/O ααιιθιν, 
-πϊη βγεμ ιεϊψ ξωτψ ΰϊ ιςιμεϊ αιφεςι I/O ΰαμ βν ιωϊξω αζιλψεο περσ,
-αψιψϊ ξηγμ C<131072>.
+Χ’Χ•Χ“Χ Χ ΧªΧ— Χ©Χ ΧΆΧ©Χ” Χ‘Χ• Χ©Χ™ΧΧ•Χ© ΧΆΧ‘Χ•Χ¨ Χ‘Χ™Χ¦Χ•ΧΆΧ™ I/O Χ‘Χ‘Χ™Χ™ΧΧ™Χ, 
+Χ ΧªΧ— Χ’Χ“Χ•Χ Χ™Χ•ΧªΧ¨ ΧΧ©Χ¤Χ¨ ΧΧª Χ™ΧΆΧ™ΧΧ•Χª Χ‘Χ™Χ¦Χ•ΧΆΧ™ I/O ΧΧ‘Χ Χ’Χ Χ™Χ©ΧªΧΧ© Χ‘Χ–Χ™Χ›Χ¨Χ•Χ Χ Χ•Χ΅Χ£,
+Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ C<131072>.
 
 
   MOJO_CHUNK_SIZE=1024
 
 =head2 C<MOJO_CONFIG>
 
-χεαυ χεπτιβ ςαεψ ωιξεω ςμ ιγι L<Mojolicious::Plugin::Config> εβν L<Mojolicious::Plugin::JSONConfig>, γιι ωιξεωι ςαεψ αγιχεϊ.
+Χ§Χ•Χ‘Χ¥ Χ§Χ•Χ Χ¤Χ™Χ’ ΧΆΧ‘Χ•Χ¨ Χ©Χ™ΧΧ•Χ© ΧΆΧ Χ™Χ“Χ™ L<Mojolicious::Plugin::Config> Χ•Χ’Χ L<Mojolicious::Plugin::JSONConfig>, Χ“Χ™Χ™ Χ©Χ™ΧΧ•Χ©Χ™ ΧΆΧ‘Χ•Χ¨ Χ‘Χ“Χ™Χ§Χ•Χª.
 
    MOJO_CONFIG=myapp.conf
 
 =head2 C<MOJO_HOME>
 
-ϊιχιιϊ αιϊ ςαεψ ιιωεν L<Mojolicious>, φψικ μδλιμ ϊξιγ πϊια λξε C</home/sri/myapp>.
+ΧªΧ™Χ§Χ™Χ™Χª Χ‘Χ™Χª ΧΆΧ‘Χ•Χ¨ Χ™Χ™Χ©Χ•Χ L<Mojolicious>, Χ¦Χ¨Χ™Χ ΧΧ”Χ›Χ™Χ ΧªΧΧ™Χ“ Χ ΧªΧ™Χ‘ Χ›ΧΧ• C</home/sri/myapp>.
 
   MOJO_HOME=/home/sri/myapp
 
 =head2 C<MOJO_IOWATCHER>
 
-ημετι L<Mojo::IOWatcher> ιιωεν μπιριεο.
+Χ—ΧΧ•Χ¤Χ™ L<Mojo::IOWatcher> Χ™Χ™Χ©Χ•Χ ΧΧ Χ™Χ΅Χ™Χ•Χ.
 
   MOJO_IOWATCHER=Mojo::IOWatcher::EV
 
 =head2 C<MOJO_KEY_FILE>
 
 
-δπϊια μξτϊη TLS, φψικ μδλιμ ϊξιγ πϊια λξε C</etc/tls/client.key>. ωιν μα L<IO::Socket::SSL> ηιια μδιεϊ ξεϊχο ςαεψ ϊξιλϊ TLS.
+Χ”Χ ΧªΧ™Χ‘ ΧΧΧ¤ΧªΧ— TLS, Χ¦Χ¨Χ™Χ ΧΧ”Χ›Χ™Χ ΧªΧΧ™Χ“ Χ ΧªΧ™Χ‘ Χ›ΧΧ• C</etc/tls/client.key>. Χ©Χ™Χ ΧΧ‘ L<IO::Socket::SSL> Χ—Χ™Χ™Χ‘ ΧΧ”Χ™Χ•Χª ΧΧ•ΧªΧ§Χ ΧΆΧ‘Χ•Χ¨ ΧªΧΧ™Χ›Χª TLS.
 
   MOJO_KEY_FILE=/etc/tls/client.key
 
 =head2 C<MOJO_LOG_LEVEL>
 
-ωμα μεβ ςαεψ ιιωεν L<Mojolicious>, φψικ μδλιμ ωμα μεβ ϊχιο λξε C<debug> ΰε C<error>.
+Χ©ΧΧ‘ ΧΧ•Χ’ ΧΆΧ‘Χ•Χ¨ Χ™Χ™Χ©Χ•Χ L<Mojolicious>, Χ¦Χ¨Χ™Χ ΧΧ”Χ›Χ™Χ Χ©ΧΧ‘ ΧΧ•Χ’ ΧªΧ§Χ™Χ Χ›ΧΧ• C<debug> ΧΧ• C<error>.
 
   MOJO_LOG_LEVEL=debug
   MOJO_LOG_LEVEL=error
 
 =head2 C<MOJO_MAX_LEFTOVER_SIZE>
 
-βεγμ ξιψαι ααιιθιν ωμ ηεφυ ςαεψ αχωεϊ HTTP ξρεγψεϊ, αψιψϊ ξηγμ ΰμ C<262144>.
+Χ’Χ•Χ“Χ ΧΧ™Χ¨Χ‘Χ™ Χ‘Χ‘Χ™Χ™ΧΧ™Χ Χ©Χ Χ—Χ•Χ¦Χ¥ ΧΆΧ‘Χ•Χ¨ Χ‘Χ§Χ©Χ•Χª HTTP ΧΧ΅Χ•Χ“Χ¨Χ•Χª, Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ ΧΧ C<262144>.
 
   MOJO_MAX_LEFTOVER_SIZE=2048
 
@@ -194,91 +194,91 @@ L<Mojo::HelloWorld>.
 
 Maximum line size for HTTP message start lines and headers in bytes, defaults
 to C<10240>.
-βεγμ ωεψδ ξιψαι ςαεψ ωεψεϊ δϊημδ ωμ δεγςεϊ HTTP ελεϊψεϊ ααιιθιν, αψιψϊ ξηγμ ωμ C<10240>.
+Χ’Χ•Χ“Χ Χ©Χ•Χ¨Χ” ΧΧ™Χ¨Χ‘Χ™ ΧΆΧ‘Χ•Χ¨ Χ©Χ•Χ¨Χ•Χª Χ”ΧªΧ—ΧΧ” Χ©Χ Χ”Χ•Χ“ΧΆΧ•Χª HTTP Χ•Χ›Χ•ΧªΧ¨Χ•Χª Χ‘Χ‘Χ™Χ™ΧΧ™Χ, Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ Χ©Χ C<10240>.
 
   MOJO_MAX_LINE_SIZE=2048
 
 =head2 C<MOJO_MAX_MEMORY_SIZE>
 
-βεγμ ξιψαι ααιιθιν ςαεψ ϊελο HTTP ωιω μωξεψ αζιλψεο, ϊελο βγεμ ιεϊψ ιωξψ αχαφιν ζξπιιν, αψιψϊ ξηγμ C<262144>.
+Χ’Χ•Χ“Χ ΧΧ™Χ¨Χ‘Χ™ Χ‘Χ‘Χ™Χ™ΧΧ™Χ ΧΆΧ‘Χ•Χ¨ ΧªΧ•Χ›Χ HTTP Χ©Χ™Χ© ΧΧ©ΧΧ•Χ¨ Χ‘Χ–Χ™Χ›Χ¨Χ•Χ, ΧªΧ•Χ›Χ Χ’Χ“Χ•Χ Χ™Χ•ΧªΧ¨ Χ™Χ©ΧΧ¨ Χ‘Χ§Χ‘Χ¦Χ™Χ Χ–ΧΧ Χ™Χ™Χ, Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ C<262144>.
 
   MOJO_MAX_MEMORY_SIZE=2048
 
 =head2 C<MOJO_MAX_MESSAGE_SIZE>
 
-βεγμ ξιψαι ςαεψ δεγςεϊ HTTP ααιιθιν, αψιψϊ ξηγμ C<5242880>.
+Χ’Χ•Χ“Χ ΧΧ™Χ¨Χ‘Χ™ ΧΆΧ‘Χ•Χ¨ Χ”Χ•Χ“ΧΆΧ•Χª HTTP Χ‘Χ‘Χ™Χ™ΧΧ™Χ, Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ C<5242880>.
 
   MOJO_MAX_MESSAGE_SIZE=1024
 
 =head2 C<MOJO_MAX_REDIRECTS>
 
-ξρτψ ξιψαι ωμ δτπιεϊ L<Mojo::UserAgent> ιςχεα, αιψϊ ξηγμ ωμ C<0>.
+ΧΧ΅Χ¤Χ¨ ΧΧ™Χ¨Χ‘Χ™ Χ©Χ Χ”Χ¤Χ Χ™Χ•Χª L<Mojo::UserAgent> Χ™ΧΆΧ§Χ•Χ‘, Χ‘Χ™Χ¨Χª ΧΧ—Χ“Χ Χ©Χ C<0>.
 
   MOJO_MAX_REDIRECTS=3
 
 =head2 C<MOJO_MAX_WEBSOCKET_SIZE>
 
-βεγμ ξιψαι ςαεψ δεγςεϊ WebSocket ααιιθιν, αψιψϊ ξηγμ ωμ C<262144>.
+Χ’Χ•Χ“Χ ΧΧ™Χ¨Χ‘Χ™ ΧΆΧ‘Χ•Χ¨ Χ”Χ•Χ“ΧΆΧ•Χª WebSocket Χ‘Χ‘Χ™Χ™ΧΧ™Χ, Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ Χ©Χ C<262144>.
 
   MOJO_MAX_WEBSOCKET_SIZE=1024
 
 =head2 C<MOJO_MODE>
 
 
-ξφα τςεμδ ςαεψ ιιωεν L<Mojolicious>, φψικ μδλιο ξφα ϊχιο λξε C<development> ΰε C<production>.
+ΧΧ¦Χ‘ Χ¤ΧΆΧ•ΧΧ” ΧΆΧ‘Χ•Χ¨ Χ™Χ™Χ©Χ•Χ L<Mojolicious>, Χ¦Χ¨Χ™Χ ΧΧ”Χ›Χ™Χ ΧΧ¦Χ‘ ΧªΧ§Χ™Χ Χ›ΧΧ• C<development> ΧΧ• C<production>.
 
   MOJO_MODE=development
   MOJO_MODE=production
 
 =head2 C<MOJO_NO_BONJOUR>
 
-αιθεμ ϊξιλϊ αεπζ'εψ. ωιν μα L<Net::Rendezvous::Publish> ηιια μδιεϊ ξεϊχο ςαεψ ϊξιλϊ αεπζ'εψ.
+Χ‘Χ™ΧΧ•Χ ΧªΧΧ™Χ›Χª Χ‘Χ•Χ Χ–'Χ•Χ¨. Χ©Χ™Χ ΧΧ‘ L<Net::Rendezvous::Publish> Χ—Χ™Χ™Χ‘ ΧΧ”Χ™Χ•Χª ΧΧ•ΧªΧ§Χ ΧΆΧ‘Χ•Χ¨ ΧªΧΧ™Χ›Χª Χ‘Χ•Χ Χ–'Χ•Χ¨.
 
   MOJO_NO_BONJOUR=1
 
 =head2 C<MOJO_NO_DETECT>
 
-αιθεμ ζιδει ραιαϊ τψιρδ L<Mojolicious>.
+Χ‘Χ™ΧΧ•Χ Χ–Χ™Χ”Χ•Χ™ Χ΅Χ‘Χ™Χ‘Χª Χ¤Χ¨Χ™Χ΅Χ” L<Mojolicious>.
 
   MOJO_NO_DETECT=1
 
 =head2 C<MOJO_NO_IPV6>
 
-αθμ ϊξιλϊ OPv6. ωιν μα L<IO::Socket::IP> ηιια μδιεϊ ξεϊχο ςαεψ ϊξιλϊ IPv6.
+Χ‘ΧΧ ΧªΧΧ™Χ›Χª OPv6. Χ©Χ™Χ ΧΧ‘ L<IO::Socket::IP> Χ—Χ™Χ™Χ‘ ΧΧ”Χ™Χ•Χª ΧΧ•ΧªΧ§Χ ΧΆΧ‘Χ•Χ¨ ΧªΧΧ™Χ›Χª IPv6.
 
   MOJO_NO_IPV6=1
 
 =head2 C<MOJO_NO_TLS>
 
-αιθεμ ϊξιλϊ TLS, ζδ ιλεμ μδϊαθ ααιφες χφϊ ιεϊψ θεα εωιξεω ξετηϊ αζλψεο. ωιν μα L<IO::Socket::SSL> ηιια μδιεϊ ξεϊχο ςαεψ ϊξιλϊ TLS.
+Χ‘Χ™ΧΧ•Χ ΧªΧΧ™Χ›Χª TLS, Χ–Χ” Χ™Χ›Χ•Χ ΧΧ”ΧªΧ‘Χ Χ‘Χ‘Χ™Χ¦Χ•ΧΆ Χ§Χ¦Χª Χ™Χ•ΧªΧ¨ ΧΧ•Χ‘ Χ•Χ©Χ™ΧΧ•Χ© ΧΧ•Χ¤Χ—Χª Χ‘Χ–Χ›Χ¨Χ•Χ. Χ©Χ™Χ ΧΧ‘ L<IO::Socket::SSL> Χ—Χ™Χ™Χ‘ ΧΧ”Χ™Χ•Χª ΧΧ•ΧªΧ§Χ ΧΆΧ‘Χ•Χ¨ ΧªΧΧ™Χ›Χª TLS.
 
   MOJO_NO_TLS=1
 
 =head2 C<MOJO_PROXY>
 
-ΰιωεψ ζιδει ΰεθεξθι ςαεψ τψεχρι HTTP εβν HTTPS αϊεκ L<Mojo::UserAgent>, 
-ςχα ριαεϊ ΰαθηδ ΰτωψεϊ ζε μΰ ξετςμϊ ςμ ιγι ςψκ αψιψϊ ξηγμ.
+ΧΧ™Χ©Χ•Χ¨ Χ–Χ™Χ”Χ•Χ™ ΧΧ•ΧΧ•ΧΧΧ™ ΧΆΧ‘Χ•Χ¨ Χ¤Χ¨Χ•Χ§Χ΅Χ™ HTTP Χ•Χ’Χ HTTPS Χ‘ΧªΧ•Χ L<Mojo::UserAgent>, 
+ΧΆΧ§Χ‘ Χ΅Χ™Χ‘Χ•Χª ΧΧ‘ΧΧ—Χ” ΧΧ¤Χ©Χ¨Χ•Χª Χ–Χ• ΧΧ ΧΧ•Χ¤ΧΆΧΧª ΧΆΧ Χ™Χ“Χ™ ΧΆΧ¨Χ Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ.
 
   MOJO_PROXY=1
 
 =head2 C<MOJO_REVERSE_PROXY>
 
 
-ΰτωψ ϊξιλϊ τψεχρι δτελδ ςαεψ ιιωεν L<Mojolicious>.
- ζδ ξΰτωψ μ-L<Mojolicious> μαηεψ αΰετο ΰεθεξθι ΰϊ λεϊψεϊ C<X-Forwarded-For>,
-C<X-Forwarded-Host> εβν C<X-Forwarded-HTTPS>.
+ΧΧ¤Χ©Χ¨ ΧªΧΧ™Χ›Χª Χ¤Χ¨Χ•Χ§Χ΅Χ™ Χ”Χ¤Χ•Χ›Χ” ΧΆΧ‘Χ•Χ¨ Χ™Χ™Χ©Χ•Χ L<Mojolicious>.
+ Χ–Χ” ΧΧΧ¤Χ©Χ¨ Χ-L<Mojolicious> ΧΧ‘Χ—Χ•Χ¨ Χ‘ΧΧ•Χ¤Χ ΧΧ•ΧΧ•ΧΧΧ™ ΧΧª Χ›Χ•ΧªΧ¨Χ•Χª C<X-Forwarded-For>,
+C<X-Forwarded-Host> Χ•Χ’Χ C<X-Forwarded-HTTPS>.
 
   MOJO_REVERSE_PROXY=1
 
 =head2 C<MOJO_TMPDIR>
 
-ρτψιιδ ςαεψ χαφιν ζξπιιν λξε δςμΰεϊ βγεμεϊ, αψιψϊ ξηγμ μωιξεω αρτψιιδ ζξπιϊ αςμϊ τμθτεψξδ ΰχψΰιϊ.
+Χ΅Χ¤Χ¨Χ™Χ™Χ” ΧΆΧ‘Χ•Χ¨ Χ§Χ‘Χ¦Χ™Χ Χ–ΧΧ Χ™Χ™Χ Χ›ΧΧ• Χ”ΧΆΧΧΧ•Χª Χ’Χ“Χ•ΧΧ•Χª, Χ‘Χ¨Χ™Χ¨Χª ΧΧ—Χ“Χ ΧΧ©Χ™ΧΧ•Χ© Χ‘Χ΅Χ¤Χ¨Χ™Χ™Χ” Χ–ΧΧ Χ™Χª Χ‘ΧΆΧΧª Χ¤ΧΧΧ¤Χ•Χ¨ΧΧ” ΧΧ§Χ¨ΧΧ™Χª.
 
   MOJO_TMPDIR=/tmp/mojo
 
 =head1 MORE
 
-ΰϊδ ιλεμ μδξωικ ςν L<Mojolicious::Guides> λςϊ ΰε μδςισ ξαθ αειχι ωμ Mojolicious L<http://github.com/kraih/mojo/wiki>,
-ωξλιμδ δψαδ ιεϊψ χαφι ϊιςεγ εγεβξΰεϊ ςμ ιγι ξηαψιν ψαιν.
+ΧΧªΧ” Χ™Χ›Χ•Χ ΧΧ”ΧΧ©Χ™Χ ΧΆΧ L<Mojolicious::Guides> Χ›ΧΆΧª ΧΧ• ΧΧ”ΧΆΧ™Χ£ ΧΧ‘Χ Χ‘Χ•Χ™Χ§Χ™ Χ©Χ Mojolicious L<http://github.com/kraih/mojo/wiki>,
+Χ©ΧΧ›Χ™ΧΧ” Χ”Χ¨Χ‘Χ” Χ™Χ•ΧªΧ¨ Χ§Χ‘Χ¦Χ™ ΧªΧ™ΧΆΧ•Χ“ Χ•Χ“Χ•Χ’ΧΧΧ•Χª ΧΆΧ Χ™Χ“Χ™ ΧΧ—Χ‘Χ¨Χ™Χ Χ¨Χ‘Χ™Χ.
 
 =cut
