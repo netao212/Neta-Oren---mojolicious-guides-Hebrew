@@ -1,0 +1,284 @@
+=head1 NAME
+=head1 שם
+
+Mojolicious::Guides::Cheatsheet - Reference
+
+=head1 סקירה
+
+מסמך זה מכיל התיחסות תמציתי לכל מטרה.
+
+=head1 ערכי סטאש שמורים
+
+חוץ מכל מה שמתחיל עם C<mojo.> יש מספר ערכי סטאש ששמורים עבור כל המסלולים והמפיק.
+
+=head2 C<action>
+
+  $r->route('/welcome')->to(action => 'hello');
+
+פעולה לשלוח אל.
+
+=head2 C<app>
+
+  $r->route('/welcome')->to(app => MyApp->new);
+
+יישום שמור לשלוח אליו.
+
+=head2 C<cb>
+
+  $r->route('/welcome')->to(cb => sub {...});
+
+חיוג חוזר לשלוח אליו.
+
+=head2 C<class>
+
+  $r->route('/welcome')->to(class => 'Greeting');
+
+Camelized alternative to C<controller>.    *********
+
+=head2 C<controller>
+
+  $r->route('/welcome')->to(controller => 'greetings');
+
+בקר לשלוח אליו.
+
+=head2 C<data>
+
+  $self->render(data => 'raw bytes');
+
+הפוך בייטים לתגובה
+
+=head2 C<extends>
+
+  $self->render(extends => 'template');
+
+תבנית להרחיב.
+
+=head2 C<format>
+
+  $self->render(format => 'rss');
+
+פורמט לשינוי.
+
+=head2 C<handler>
+
+  $self->render(handler => 'ep');
+
+משנה עבור תהליך השינוי.
+
+=head2 C<inline>
+
+  $self->render(inline => '<%= 1 + 1%>');
+
+תבנית מסודרת לשנות.
+
+=head2 C<json>
+
+  $self->render(json => {foo => 23});
+
+הפוך מבנה פרל לתגובת JSON.
+
+=head2 C<layout>
+
+  $self->render(layout => 'green');
+
+מערך לשינוי.
+
+=head2 C<method>
+
+  $r->route('/welcome')->to(method => 'hello');
+
+חלופה אל C<action>.
+
+=head2 C<namespace>
+
+  $r->route('/welcome')->to(namespace => 'TestApp', method => 'lulz');
+
+מרחב לשלוח אליו.
+
+=head2 C<partial>
+
+  my $result = $self->render(partial => 1);
+
+החזר תוצאה מסודרת במקום להפוך את זה לתגובה.
+
+=head2 C<path>
+
+  $r->route('/welcome')->to(path => '/test', app => MyApp->new);
+
+נתיב בסיס עבור העברה ליישומים משובצים.
+
+=head2 C<status>
+
+  $self->render(status => 404);
+
+Status code to use for rendered response.
+קוד סטאטוס לשימוש עבור תגובה מותאמת.
+
+=head2 C<template>
+
+  $self->render(template => 'bye');
+
+תבנית להתאים.
+
+=head2 C<text>
+
+  $self->render(text => 'Hello World!');
+
+הפוך תכונות אל תגובה.
+
+=head1 ENVIRONMENT VARIABLES
+
+חלקים רבים של L<Mojolicious> יכולים להתכוון עם משתני סביבה. משתני תקון הסביבה לא כלולים מאחר והם לשימוש המפתח בלבד.
+
+=head2 C<MOJO_APP>
+
+מחליטים באיזה יישום L<Mojolicious> או יישום L<Mojo> נשתמש, תמיד צריך להכיל שם קלאס כמו C<MyApp>, בדרך כלל ערך ברירת מחדל אל
+L<Mojo::HelloWorld>.
+
+  MOJO_APP=MyApp
+
+=head2 C<MOJO_CERT_FILE>
+
+הנתיב לתעודת TLS צריך להכיל תמיד נתיב כמו C</etc/tls/client.crt>. שים לב L<IO::Socket::SSL> חייב להיות מותקן עבור תמיכת TLL.
+
+  MOJO_CERT_FILE=/etc/tls/client.crt
+
+=head2 C<MOJO_CHUNK_SIZE>
+
+גודל נתח שנעשה בו שימוש עבור ביצועי I/O בבייטים, 
+נתח גדול יותר משפר את יעילות ביצועי I/O אבל גם ישתמש בזיכרון נוסף,
+ברירת מחדל C<131072>.
+
+
+  MOJO_CHUNK_SIZE=1024
+
+=head2 C<MOJO_CONFIG>
+
+קובץ קונפיג עבור שימוש על ידי L<Mojolicious::Plugin::Config> וגם L<Mojolicious::Plugin::JSONConfig>, דיי שימושי עבור בדיקות.
+
+   MOJO_CONFIG=myapp.conf
+
+=head2 C<MOJO_HOME>
+
+תיקיית בית עבור יישום L<Mojolicious>, צריך להכיל תמיד נתיב כמו C</home/sri/myapp>.
+
+  MOJO_HOME=/home/sri/myapp
+
+=head2 C<MOJO_IOWATCHER>
+
+חלופי L<Mojo::IOWatcher> יישום לניסיון.
+
+  MOJO_IOWATCHER=Mojo::IOWatcher::EV
+
+=head2 C<MOJO_KEY_FILE>
+
+
+הנתיב למפתח TLS, צריך להכיל תמיד נתיב כמו C</etc/tls/client.key>. שים לב L<IO::Socket::SSL> חייב להיות מותקן עבור תמיכת TLS.
+
+  MOJO_KEY_FILE=/etc/tls/client.key
+
+=head2 C<MOJO_LOG_LEVEL>
+
+שלב לוג עבור יישום L<Mojolicious>, צריך להכיל שלב לוג תקין כמו C<debug> או C<error>.
+
+  MOJO_LOG_LEVEL=debug
+  MOJO_LOG_LEVEL=error
+
+=head2 C<MOJO_MAX_LEFTOVER_SIZE>
+
+גודל מירבי בבייטים של חוצץ עבור בקשות HTTP מסודרות, ברירת מחדל אל C<262144>.
+
+  MOJO_MAX_LEFTOVER_SIZE=2048
+
+=head2 C<MOJO_MAX_LINE_SIZE>
+
+Maximum line size for HTTP message start lines and headers in bytes, defaults
+to C<10240>.
+גודל שורה מירבי עבור שורות התחלה של הודעות HTTP וכותרות בבייטים, ברירת מחדל של C<10240>.
+
+  MOJO_MAX_LINE_SIZE=2048
+
+=head2 C<MOJO_MAX_MEMORY_SIZE>
+
+גודל מירבי בבייטים עבור תוכן HTTP שיש לשמור בזיכרון, תוכן גדול יותר ישמר בקבצים זמניים, ברירת מחדל C<262144>.
+
+  MOJO_MAX_MEMORY_SIZE=2048
+
+=head2 C<MOJO_MAX_MESSAGE_SIZE>
+
+גודל מירבי עבור הודעות HTTP בבייטים, ברירת מחדל C<5242880>.
+
+  MOJO_MAX_MESSAGE_SIZE=1024
+
+=head2 C<MOJO_MAX_REDIRECTS>
+
+מספר מירבי של הפניות L<Mojo::UserAgent> יעקוב, בירת מחדל של C<0>.
+
+  MOJO_MAX_REDIRECTS=3
+
+=head2 C<MOJO_MAX_WEBSOCKET_SIZE>
+
+גודל מירבי עבור הודעות WebSocket בבייטים, ברירת מחדל של C<262144>.
+
+  MOJO_MAX_WEBSOCKET_SIZE=1024
+
+=head2 C<MOJO_MODE>
+
+
+מצב פעולה עבור יישום L<Mojolicious>, צריך להכין מצב תקין כמו C<development> או C<production>.
+
+  MOJO_MODE=development
+  MOJO_MODE=production
+
+=head2 C<MOJO_NO_BONJOUR>
+
+ביטול תמיכת בונז'ור. שים לב L<Net::Rendezvous::Publish> חייב להיות מותקן עבור תמיכת בונז'ור.
+
+  MOJO_NO_BONJOUR=1
+
+=head2 C<MOJO_NO_DETECT>
+
+ביטול זיהוי סביבת פריסה L<Mojolicious>.
+
+  MOJO_NO_DETECT=1
+
+=head2 C<MOJO_NO_IPV6>
+
+בטל תמיכת OPv6. שים לב L<IO::Socket::IP> חייב להיות מותקן עבור תמיכת IPv6.
+
+  MOJO_NO_IPV6=1
+
+=head2 C<MOJO_NO_TLS>
+
+ביטול תמיכת TLS, זה יכול להתבט בביצוע קצת יותר טוב ושימוש מופחת בזכרון. שים לב L<IO::Socket::SSL> חייב להיות מותקן עבור תמיכת TLS.
+
+  MOJO_NO_TLS=1
+
+=head2 C<MOJO_PROXY>
+
+אישור זיהוי אוטומטי עבור פרוקסי HTTP וגם HTTPS בתוך L<Mojo::UserAgent>, 
+עקב סיבות אבטחה אפשרות זו לא מופעלת על ידי ערך ברירת מחדל.
+
+  MOJO_PROXY=1
+
+=head2 C<MOJO_REVERSE_PROXY>
+
+
+אפשר תמיכת פרוקסי הפוכה עבור יישום L<Mojolicious>.
+ זה מאפשר ל-L<Mojolicious> לבחור באופן אוטומטי את כותרות C<X-Forwarded-For>,
+C<X-Forwarded-Host> וגם C<X-Forwarded-HTTPS>.
+
+  MOJO_REVERSE_PROXY=1
+
+=head2 C<MOJO_TMPDIR>
+
+ספרייה עבור קבצים זמניים כמו העלאות גדולות, ברירת מחדל לשימוש בספרייה זמנית בעלת פלטפורמה אקראית.
+
+  MOJO_TMPDIR=/tmp/mojo
+
+=head1 MORE
+
+אתה יכול להמשיך עם L<Mojolicious::Guides> כעת או להעיף מבט בויקי של Mojolicious L<http://github.com/kraih/mojo/wiki>,
+שמכילה הרבה יותר קבצי תיעוד ודוגמאות על ידי מחברים רבים.
+
+=cut
