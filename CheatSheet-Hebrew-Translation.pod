@@ -5,17 +5,17 @@ Mojolicious::Guides::Cheatsheet - Reference
 
 =head1 סקירה
 
-מסמך זה מכיל התיחסות תמציתי לכל מטרה.
+מסמך זה מכיל התיחסות תמציתית לכל מטרה.
 
-=head1 ערכי סטאש שמורים
+=head1 ערכי אוסף שמורים
 
-חוץ מכל מה שמתחיל עם C<mojo.> יש מספר ערכי סטאש ששמורים עבור כל המסלולים והמפיק.
+מלבד מה שמתחיל ב C<mojo.> יש מספר ערכי אוסף ששמורים עבור כל המסלולים והמפיק.
 
 =head2 C<action>
 
   $r->route('/welcome')->to(action => 'hello');
 
-פעולה לשלוח אל.
+פעולת שליחה אל.
 
 =head2 C<app>
 
@@ -27,13 +27,13 @@ Mojolicious::Guides::Cheatsheet - Reference
 
   $r->route('/welcome')->to(cb => sub {...});
 
-חיוג חוזר לשלוח אליו.
+שגרה שקוראים אליה.
 
 =head2 C<class>
 
   $r->route('/welcome')->to(class => 'Greeting');
 
-Camelized alternative to C<controller>.    *********
+Camelized alternative to C<controller>.
 
 =head2 C<controller>
 
@@ -45,7 +45,7 @@ Camelized alternative to C<controller>.    *********
 
   $self->render(data => 'raw bytes');
 
-הפוך בייטים לתגובה
+הפוך בתים לתגובה.
 
 =head2 C<extends>
 
@@ -145,7 +145,7 @@ L<Mojo::HelloWorld>.
 
 =head2 C<MOJO_CHUNK_SIZE>
 
-גודל נתח שנעשה בו שימוש עבור ביצועי I/O בבייטים, 
+גודל נתח שנעשה בו שימוש עבור ביצועי I/O בבתים, 
 נתח גדול יותר משפר את יעילות ביצועי I/O אבל גם ישתמש בזיכרון נוסף,
 ברירת מחדל C<131072>.
 
@@ -186,7 +186,7 @@ L<Mojo::HelloWorld>.
 
 =head2 C<MOJO_MAX_LEFTOVER_SIZE>
 
-גודל מירבי בבייטים של חוצץ עבור בקשות HTTP מסודרות, ברירת מחדל אל C<262144>.
+גודל מירבי בבתים של חוצץ עבור בקשות HTTP מסודרות, ברירת מחדל אל C<262144>.
 
   MOJO_MAX_LEFTOVER_SIZE=2048
 
@@ -194,19 +194,19 @@ L<Mojo::HelloWorld>.
 
 Maximum line size for HTTP message start lines and headers in bytes, defaults
 to C<10240>.
-גודל שורה מירבי עבור שורות התחלה של הודעות HTTP וכותרות בבייטים, ברירת מחדל של C<10240>.
+גודל שורה מירבי עבור שורות התחלה של הודעות HTTP וכותרות בבתים, ברירת מחדל של C<10240>.
 
   MOJO_MAX_LINE_SIZE=2048
 
 =head2 C<MOJO_MAX_MEMORY_SIZE>
 
-גודל מירבי בבייטים עבור תוכן HTTP שיש לשמור בזיכרון, תוכן גדול יותר ישמר בקבצים זמניים, ברירת מחדל C<262144>.
+גודל מירבי בבתים עבור תוכן HTTP שיש לשמור בזיכרון, תוכן גדול יותר ישמר בקבצים זמניים, ברירת מחדל C<262144>.
 
   MOJO_MAX_MEMORY_SIZE=2048
 
 =head2 C<MOJO_MAX_MESSAGE_SIZE>
 
-גודל מירבי עבור הודעות HTTP בבייטים, ברירת מחדל C<5242880>.
+גודל מירבי עבור הודעות HTTP בבתים, ברירת מחדל C<5242880>.
 
   MOJO_MAX_MESSAGE_SIZE=1024
 
@@ -218,7 +218,7 @@ to C<10240>.
 
 =head2 C<MOJO_MAX_WEBSOCKET_SIZE>
 
-גודל מירבי עבור הודעות WebSocket בבייטים, ברירת מחדל של C<262144>.
+גודל מירבי עבור הודעות WebSocket בבתים, ברירת מחדל של C<262144>.
 
   MOJO_MAX_WEBSOCKET_SIZE=1024
 
