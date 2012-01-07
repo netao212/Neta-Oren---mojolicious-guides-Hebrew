@@ -33,7 +33,8 @@ Mojolicious::Guides::Cheatsheet - Reference
 
   $r->route('/welcome')->to(class => 'Greeting');
 
-Camelized alternative to C<controller>.
+
+אלטרנטיבת פרלי אל C<controller>.
 
 =head2 C<controller>
 
@@ -63,7 +64,7 @@ Camelized alternative to C<controller>.
 
   $self->render(handler => 'ep');
 
-משנה עבור תהליך השינוי.
+הנדלר לשימוש עבור ייצור.
 
 =head2 C<inline>
 
